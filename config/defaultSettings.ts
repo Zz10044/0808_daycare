@@ -12,7 +12,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Ant Design Pro',
+  title: 'DayCare System',
   pwa: false,
   iconfontUrl: '',
 } as LayoutSettings & {

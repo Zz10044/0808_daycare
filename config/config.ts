@@ -48,6 +48,7 @@ export default defineConfig({
       icon: 'smile',
       component: './Welcome',
     },
+
     {
       path: '/admin',
       name: 'admin',
@@ -56,15 +57,32 @@ export default defineConfig({
       component: './Admin',
       routes: [
         {
-          path: '/admin/sub-page',
-          name: 'sub-page',
+          path: '/admin/class',
+          name: 'Class Management',
+          icon: 'smile',
+          component: './Welcome',
+          // component: './groupList',
+        },
+        {
+          path: '/admin/group',
+          name: 'Group Management',
           icon: 'smile',
           component: './Welcome',
         },
+        
+        {
+          path: '/admin/class',
+          name: 'Vaccine management',
+          icon: 'smile',
+          component: './Welcome',
+          // component: './groupList',
+        },
+        
       ],
     },
     {
-      name: 'list.table-list',
+      // name: 'list.table-list',
+      name: 'Student Information',
       icon: 'table',
       path: '/list',
       component: './ListTableList',

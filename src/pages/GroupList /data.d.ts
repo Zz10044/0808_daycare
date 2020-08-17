@@ -1,17 +1,4 @@
 export interface TableListItem {
-  studentId: number;
-  name: string;
-  parentName: string;
-  address: string;
-  phone: number;
-  grade: double;
-  registrationDate: Date;
-  groupId: number;
-  birthday: Date;
-  ageState: String;
-  
-
-  
   key: number;
   disabled?: boolean;
   href: string;

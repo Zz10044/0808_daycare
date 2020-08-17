@@ -4,10 +4,10 @@ import React, { useState, useRef } from 'react';
 import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
 import ProTable, { ProColumns, ActionType } from '@ant-design/pro-table';
 
-import CreateForm from './components/CreateForm';
-import UpdateForm, { FormValueType } from './components/UpdateForm';
-import { TableListItem } from './data.d';
-import { queryRule, updateRule, addRule, removeRule } from './service';
+import CreateForm from './components/CreateForm2';
+import UpdateForm, { FormValueType } from './components/UpdateForm2';
+import { TableListItem } from './data';
+import { queryRule, updateRule, addRule, removeRule } from './service2';
 
 /**
  * 添加节点
@@ -79,7 +79,7 @@ const TableList: React.FC<{}> = () => {
   const [selectedRowsState, setSelectedRows] = useState<TableListItem[]>([]);
   const columns: ProColumns<TableListItem>[] = [
     {
-      title: 'StudentId',
+      title: 'groupId',
       dataIndex: 'studentId',
       rules: [
         {
@@ -89,7 +89,7 @@ const TableList: React.FC<{}> = () => {
       ],
     },
     {
-      title: 'Name',
+      title: 'classroomId',
       dataIndex: 'name',
       rules: [
         {
@@ -99,8 +99,8 @@ const TableList: React.FC<{}> = () => {
       ],
     },
     {
-      title: 'parentName',
-      dataIndex: 'parentName',
+      title: 'ageState',
+      dataIndex: 'name',
       rules: [
         {
           required: true,
@@ -109,13 +109,13 @@ const TableList: React.FC<{}> = () => {
       ],
     },
     {
-      title: 'address',
-      dataIndex: 'address',
+      title: 'teacherId',
+      dataIndex: 'desc',
       valueType: 'textarea',
     },
     {
-      title: 'phone',
-      dataIndex: 'phone',
+      title: 'studentCount',
+      dataIndex: 'name',
       rules: [
         {
           required: true,
@@ -125,8 +125,8 @@ const TableList: React.FC<{}> = () => {
     },
     
     {
-      title: 'grade',
-      dataIndex: 'grade',
+      title: 'ratio',
+      dataIndex: 'name',
       rules: [
         {
           required: true,
@@ -155,27 +155,27 @@ const TableList: React.FC<{}> = () => {
     //     3: { text: '异常', status: 'Error' },
     //   },
     // },
+    // {
+    //   // title: '上次调度时间',
+    //   title: 'registrationDate',
+    //   dataIndex: 'updatedAt',
+    //   sorter: true,
+    //   valueType: 'dateTime',
+    //   hideInForm: true,
+    //   renderFormItem: (item, { defaultRender, ...rest }, form) => {
+    //     const status = form.getFieldValue('status');
+    //     if (`${status}` === '0') {
+    //       return false;
+    //     }
+    //     if (`${status}` === '3') {
+    //       return <Input {...rest} placeholder="请输入异常原因！" />;
+    //     }
+    //     return defaultRender(item);
+    //   },
+    // },
     {
-      // title: '上次调度时间',
-      title: 'registrationDate',
-      dataIndex: 'updatedAt',
-      sorter: true,
-      valueType: 'dateTime',
-      hideInForm: true,
-      renderFormItem: (item, { defaultRender, ...rest }, form) => {
-        const status = form.getFieldValue('status');
-        if (`${status}` === '0') {
-          return false;
-        }
-        if (`${status}` === '3') {
-          return <Input {...rest} placeholder="请输入异常原因！" />;
-        }
-        return defaultRender(item);
-      },
-    },
-    {
-      title: 'birthday',
-      dataIndex: 'birthday',
+      title: 'fullState',
+      dataIndex: 'name',
       rules: [
         {
           required: true,
@@ -183,16 +183,7 @@ const TableList: React.FC<{}> = () => {
         },
       ],
     },
-    {
-      title: 'ageState',
-      dataIndex: 'ageState',
-      rules: [
-        {
-          required: true,
-          message: '规则名称为必填项',
-        },
-      ],
-    },
+   
     {
       title: 'option',
       dataIndex: 'option',
